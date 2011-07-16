@@ -1,4 +1,4 @@
-=== Issuu PDF Uploader ===
+=== Issuu PDF Sync ===
 Contributors: benjaminniess, momo360modena
 Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
