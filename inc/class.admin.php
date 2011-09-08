@@ -15,6 +15,7 @@ class IPS_Admin {
 		
 		if ( $pagenow == "media.php" )
 			add_action("admin_head", array(&$this, "editMediaJs"), 50 );
+		
 		add_action( 'admin_init', array( &$this, 'checkJsPdfEdition' ) );
 		add_action( 'admin_menu', array( &$this, 'addPluginMenu' ) );
 		
@@ -322,34 +323,35 @@ class IPS_Admin {
 	 * @param $form_fields Object
 	 * @param $post Object
 	 */
-	function insertIPSButton( $form_fields, $post ) {
+	function insertIPSButton( $form_fields, $attachment ) {
 		global $wp_version, $ips_options;
 		
-		if ( !isset( $form_fields ) || empty( $form_fields ) || !isset( $post ) || empty( $post ) )
+		if ( !isset( $form_fields ) || empty( $form_fields ) || !isset( $attachment ) || empty( $attachment ) )
 			return $form_fields;
 		
-		$file = wp_get_attachment_url( $post->ID );
+		$file = wp_get_attachment_url( $attachment->ID );
 		
 		// Only add the extra button if the attachment is a PDF file
-		if ( $post->post_mime_type != 'application/pdf' )
+		if ( $attachment->post_mime_type != 'application/pdf' )
+			return $form_fields;
+		
+		// Allow plugin to stop the auto-insertion
+		$check = apply_filters( 'insert-ips-button', true, $attachment, $form_fields );
+		if ( $check !== true ) 
 			return $form_fields;
 		
 		// Check on post meta if the PDF has already been uploaded on Issuu
-		$issuu_pdf_id = get_post_meta( $post->ID, 'issuu_pdf_id', true );
-		$disable_auto_upload = get_post_meta( $post->ID, 'disable_auto_upload', true );
+		$issuu_pdf_id = get_post_meta( $attachment->ID, 'issuu_pdf_id', true );
+		$disable_auto_upload = get_post_meta( $attachment->ID, 'disable_auto_upload', true );
 		
 		// Upload the PDF to Issuu if necessary and if the Auto upload feature is enabled
 		if ( empty( $issuu_pdf_id ) && isset( $ips_options['auto_upload'] ) && $ips_options['auto_upload'] == 1 && $disable_auto_upload != 1)
-			$issuu_pdf_id = $this->sendPDFToIssuu( $post->ID );
+			$issuu_pdf_id = $this->sendPDFToIssuu( $attachment->ID );
 		
 		if ( empty( $issuu_pdf_id ) )
 			return $form_fields;
 		
 		$form_fields["url"]["html"] .= "<button type='button' class='button urlissuupdfsync issuu-pdf-" . $issuu_pdf_id . "' value='[pdf issuu_pdf_id=\"" . $issuu_pdf_id . "\"]' title='[pdf issuu_pdf_id=\"" . $issuu_pdf_id . "\"]'>" . _( 'Issuu PDF' ) . "</button>";
-		
-		$form_fields["url"]["html"] .= "<script type='text/javascript'>
-		jQuery('issuu-pdf-" . $issuu_pdf_id . "').bind('click', function(){jQuery(this).siblings('input').val(this.value);});
-		</script>\n";
 		
 		return $form_fields;
 	}

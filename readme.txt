@@ -4,7 +4,7 @@ Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
 Requires at least: 3.1
 Tested up to: 3.2.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 == Description ==
 
@@ -55,3 +55,6 @@ You will see all avaliable params inside the plugin option pannel
 	* First release
 * 1.0.1
 	* Fix bug on shortcode
+* 1.0.2
+	* Apply a new filter
+	* Clean useless js 
