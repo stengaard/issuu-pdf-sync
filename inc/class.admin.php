@@ -20,6 +20,11 @@ class IPS_Admin {
 		add_action( 'admin_menu', array( &$this, 'addPluginMenu' ) );
 		
 		wp_enqueue_script( 'jquery' );
+		
+		// Add the tinyMCE button
+		add_action( 'admin_init', array (&$this, 'addButtons' ) );
+		add_action( 'wp_ajax_ips_shortcodePrinter', array( &$this, 'wp_ajax_fct' ) );
+		
 	}
 	
 	function addPluginMenu() {
@@ -484,6 +489,64 @@ class IPS_Admin {
 			});
 		</script>
 		<?php
+	}
+
+	/*
+	 * The content of the javascript popin for the PDF insertion
+	 * 
+	 * @author Benjamin Niess
+	 */
+	function wp_ajax_fct(){
+		?>
+		<h2><?php _e('Select a PDF file', 'ips'); ?></h2>
+		<select name="ips_pdf_list" id="ips_pdf_list">
+			<?php
+			$pdf_files = new WP_Query( array( 'post_type' => 'attachment', 'nopaging' => true, 'post_status' => 'publish' ) );
+			if ( $pdf_files->have_posts() ) while ( $pdf_files->have_posts() ) : $pdf_files->the_post(); ?>
+				<option value="<?php the_ID(); ?>"><?php the_title(); ?></option>
+			<?php endwhile; ?>
+		</select>
+		<h2>Choisissez la taille du player</h2>
+		<p>Largeur : <br /><input type="number" min="100" max="1000" name="ips_width" id="ips_width" value="640" /> px</p>
+		<p>Hauteur : <br /><input type="number" min="100" max="1000" name="ips_height" id="ips_height" value="480" /> px</p>
+		<input name="insert_video_button" type="submit" class="button-primary" id="insert_video_button" tabindex="5" accesskey="p" value="Insérer la vidéo">
+		<?php die();
+	}
+
+	/*
+	 * Add buttons to the tiymce bar
+	 * 
+	 * @author Benjamin Niess
+	 */
+	function addButtons() {
+		// Don't bother doing this stuff if the current user lacks permissions
+		if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') )
+			return false;
+		
+		if ( get_user_option('rich_editing') == 'true') {
+			add_filter('mce_external_plugins', array (&$this,'addScriptTinymce' ) );
+			add_filter('mce_buttons', array (&$this,'registerTheButton' ) );
+		}
+	}
+
+	/*
+	 * Add buttons to the tiymce bar
+	 * 
+	 * @author Benjamin Niess
+	 */
+	function registerTheButton($buttons) {
+		array_push($buttons, "|", "ips");
+		return $buttons;
+	}
+
+	/*
+	 * Load the custom js for the tinymce button
+	 * 
+	 * @author Benjamin Niess
+	 */
+	function addScriptTinymce($plugin_array) {
+		$plugin_array['ips'] = IPS_URL . '/js/tinymce.js';
+		return $plugin_array;
 	}
 }
 ?>
