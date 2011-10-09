@@ -38,6 +38,7 @@ class IPS_Admin {
 	 * @author Benjamin Niess
 	 */
 	function displayOptions() {
+		global $ips_options;
 		if ( isset($_POST['save']) ) {
 			$new_options = array();
 			
@@ -53,9 +54,8 @@ class IPS_Admin {
 			echo '<div class="message updated"><p>'.__('Options updated!', 'ips').'</p></div>';
 		}
 		
-		$fields = get_option('ips_options');
-		if ( $fields == false ) {
-			$fields = array();
+		if ( $ips_options == false ) {
+			$ips_options = array();
 		}
 		?>
 		<div class="wrap" id="ips_options">
@@ -70,17 +70,22 @@ class IPS_Admin {
 						<th class="label" scope="row"><label for="ips[issuu_api_key]"><span class="alignleft"><?php _e('Issuu API Key', 'ips'); ?>
 							<br /><a href="http://issuu.com/" target="_blank"><?php _e('Get an Issuu API Key', 'ips'); ?></span>
 						</label></th>
-						<td><input id="ips[issuu_api_key]" type="text" class="text" name="ips[issuu_api_key]" value="<?php echo isset( $fields['issuu_api_key'] ) ? $fields['issuu_api_key'] : '' ; ?>" /></a>
+						<td><input id="ips[issuu_api_key]" type="text" class="text" name="ips[issuu_api_key]" value="<?php echo isset( $ips_options['issuu_api_key'] ) ? $ips_options['issuu_api_key'] : '' ; ?>" /></a>
 						</td>
 					</tr>
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[issuu_secret_key]"><span class="alignleft"><?php _e('Issuu private key', 'ips'); ?></span></label></th>
-						<td><input id="ips[issuu_secret_key]" type="text" name="ips[issuu_secret_key]" value="<?php echo isset( $fields['issuu_secret_key'] ) ? $fields['issuu_secret_key'] : ''; ?>" /></td>
+						<td><input id="ips[issuu_secret_key]" type="text" name="ips[issuu_secret_key]" value="<?php echo isset( $ips_options['issuu_secret_key'] ) ? $ips_options['issuu_secret_key'] : ''; ?>" /></td>
 					</tr>
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[auto_upload]"><span class="alignleft"><?php _e('Automatically upload PDFs to Issuu', 'ips'); ?></span></label></th>
-						<td><input id="ips[auto_upload]" type="checkbox" <?php checked( isset( $fields['auto_upload'] ) ? $fields['auto_upload'] : '' , 1 ); ?> name="ips[auto_upload]" value="1" /></td>
+						<td><input id="ips[auto_upload]" type="checkbox" <?php checked( isset( $ips_options['auto_upload'] ) ? $ips_options['auto_upload'] : '' , 1 ); ?> name="ips[auto_upload]" value="1" /></td>
+					</tr>
+					
+					<tr valign="top" class="field">
+						<th class="label" scope="row"><label for="ips[add_ips_button]"><span class="alignleft"><?php _e('Add the Issuu PDF Sync button to TinyMCE', 'ips'); ?></span></label></th>
+						<td><input id="ips[add_ips_button]" type="checkbox" <?php checked( isset( $ips_options['add_ips_button'] ) ? $ips_options['add_ips_button'] : '' , 1 ); ?> name="ips[add_ips_button]" value="1" /></td>
 					</tr>
 					
 					<tr><td colspan="2"><h3><?php _e('Default embed code configuration', 'ips'); ?></h3></td></tr> 
@@ -88,46 +93,46 @@ class IPS_Admin {
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[layout]"><span class="alignleft"><?php _e('Layout', 'ips'); ?></span></label></th>
 						<td>
-							<p style="height:25px;"><input id="ips[layout]" type="radio" name="ips[layout]" value="1" <?php checked( isset( $fields['layout'] ) ? $fields['layout'] : 0 , 1 ); ?> /> <?php _e('Two up', 'ips'); ?><img src="<?php echo IPS_URL . '/images/layout-double-pages.png' ; ?>" height="16" style="margin-left:5px;" /></p>
-							<p><input type="radio" name="ips[layout]" value="2" <?php checked( isset( $fields['layout'] ) ? $fields['layout'] : 0 , 2 ); ?> /> <?php _e('Single page', 'ips'); ?><img src="<?php echo IPS_URL . '/images/layout-single-page.png' ; ?>" height="16" style="margin-left:5px;" /></p>
+							<p style="height:25px;"><input id="ips[layout]" type="radio" name="ips[layout]" value="1" <?php checked( isset( $ips_options['layout'] ) ? $ips_options['layout'] : 0 , 1 ); ?> /> <?php _e('Two up', 'ips'); ?><img src="<?php echo IPS_URL . '/images/layout-double-pages.png' ; ?>" height="16" style="margin-left:5px;" /></p>
+							<p><input type="radio" name="ips[layout]" value="2" <?php checked( isset( $ips_options['layout'] ) ? $ips_options['layout'] : 0 , 2 ); ?> /> <?php _e('Single page', 'ips'); ?><img src="<?php echo IPS_URL . '/images/layout-single-page.png' ; ?>" height="16" style="margin-left:5px;" /></p>
 						</td>
 					</tr>
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[width]"><span class="alignleft"><?php _e('Width', 'ips'); ?></span></label></th>
-						<td><input id="ips[width]" type="number" min="0" max="2000" name="ips[width]" value="<?php echo isset(  $fields['width'] ) ? (int)$fields['width'] : ''; ?>" /></td>
+						<td><input id="ips[width]" type="number" min="0" max="2000" name="ips[width]" value="<?php echo isset(  $ips_options['width'] ) ? (int)$ips_options['width'] : ''; ?>" /></td>
 					</tr>
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[height]"><span class="alignleft"><?php _e('Height', 'ips'); ?></span></label></th>
-						<td><input id="ips[height]" type="number" min="0" max="2000" name="ips[height]" value="<?php echo isset(  $fields['height'] ) ? (int)$fields['height'] : ''; ?>" /></td>
+						<td><input id="ips[height]" type="number" min="0" max="2000" name="ips[height]" value="<?php echo isset(  $ips_options['height'] ) ? (int)$ips_options['height'] : ''; ?>" /></td>
 					</tr>
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[bgcolor]"><span class="alignleft"><?php _e('Background color', 'ips'); ?></span></label></th>
-						<td># <input id="ips[bgcolor]" style="width:65px;" type="text" maxlength="6" name="ips[bgcolor]" value="<?php echo isset(  $fields['bgcolor'] ) ? $fields['bgcolor'] : ''; ?>" /></td>
+						<td># <input id="ips[bgcolor]" style="width:65px;" type="text" maxlength="6" name="ips[bgcolor]" value="<?php echo isset(  $ips_options['bgcolor'] ) ? $ips_options['bgcolor'] : ''; ?>" /></td>
 					</tr>
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[allow_full_screen]"><span class="alignleft"><?php _e('Allow full screen', 'ips'); ?></span></label></th>
-						<td><input id="ips[allow_full_screen]" type="checkbox" <?php checked( isset( $fields['allow_full_screen'] ) ? $fields['allow_full_screen'] : '' , 1 ); ?> name="ips[allow_full_screen]" value="1" /></td>
+						<td><input id="ips[allow_full_screen]" type="checkbox" <?php checked( isset( $ips_options['allow_full_screen'] ) ? $ips_options['allow_full_screen'] : '' , 1 ); ?> name="ips[allow_full_screen]" value="1" /></td>
 					</tr>
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[show_flip_buttons]"><span class="alignleft"><?php _e('Always show flip buttons', 'ips'); ?></span></label></th>
-						<td><input id="ips[show_flip_buttons]" type="checkbox" <?php checked( isset( $fields['show_flip_buttons'] ) ? $fields['show_flip_buttons'] : '' , 1 ); ?> name="ips[show_flip_buttons]" value="1" /></td>
+						<td><input id="ips[show_flip_buttons]" type="checkbox" <?php checked( isset( $ips_options['show_flip_buttons'] ) ? $ips_options['show_flip_buttons'] : '' , 1 ); ?> name="ips[show_flip_buttons]" value="1" /></td>
 					</tr>
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[autoflip]"><span class="alignleft"><?php _e('Auto flip', 'ips'); ?></span></label></th>
 						<td>
-							<input type="checkbox" id="ips[autoflip]" name="ips[autoflip]" value="1" <?php checked( isset( $fields['autoflip'] ) ? $fields['autoflip'] : 0 , 1 ); ?> />
+							<input type="checkbox" id="ips[autoflip]" name="ips[autoflip]" value="1" <?php checked( isset( $ips_options['autoflip'] ) ? $ips_options['autoflip'] : 0 , 1 ); ?> />
 						</td>
 					</tr>  
 					
 					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[flip_timelaps]"><span class="alignleft"><?php _e('Flip time laps', 'ips'); ?></span></label></th>
-						<td><input id="ips[flip_timelaps]" type="number" step="100" min="1000" max="200000" name="ips[flip_timelaps]" value="<?php echo isset(  $fields['flip_timelaps'] ) ? (int)$fields['flip_timelaps'] : '6000'; ?>" />
+						<td><input id="ips[flip_timelaps]" type="number" step="100" min="1000" max="200000" name="ips[flip_timelaps]" value="<?php echo isset(  $ips_options['flip_timelaps'] ) ? (int)$ips_options['flip_timelaps'] : '6000'; ?>" />
 							<p class="description"><?php _e('(in miliseconds - default : 6000)', 'ips'); ?></p>
 						</td>
 					</tr>
@@ -497,19 +502,99 @@ class IPS_Admin {
 	 * @author Benjamin Niess
 	 */
 	function wp_ajax_fct(){
+		global $ips_options, $wp_styles;
+		$dir = $wp_styles->text_direction;
+		$ver = md5( "$wp_styles->concat_version{$dir}" );
+		
+		// Make the href for the style of box
+		$href = $wp_styles->base_url . "/wp-admin/load-styles.php?c={$zip}&dir={$dir}&load=media&ver=$ver";
+		echo "<link rel='stylesheet' href='" . esc_attr( $href ) . "' type='text/css' media='all' />\n";
+		
 		?>
-		<h2><?php _e('Select a PDF file', 'ips'); ?></h2>
-		<select name="ips_pdf_list" id="ips_pdf_list">
-			<?php
-			$pdf_files = new WP_Query( array( 'post_type' => 'attachment', 'nopaging' => true, 'post_status' => 'publish' ) );
-			if ( $pdf_files->have_posts() ) while ( $pdf_files->have_posts() ) : $pdf_files->the_post(); ?>
-				<option value="<?php the_ID(); ?>"><?php the_title(); ?></option>
-			<?php endwhile; ?>
-		</select>
-		<h2>Choisissez la taille du player</h2>
-		<p>Largeur : <br /><input type="number" min="100" max="1000" name="ips_width" id="ips_width" value="640" /> px</p>
-		<p>Hauteur : <br /><input type="number" min="100" max="1000" name="ips_height" id="ips_height" value="480" /> px</p>
-		<input name="insert_video_button" type="submit" class="button-primary" id="insert_video_button" tabindex="5" accesskey="p" value="Insérer la vidéo">
+		<h3 class="media-title"><?php _e('Insert an Issuu PDF Flipbook', 'ips'); ?></h3>
+
+		<form name="ips_shortcode_generator" id="ips_shortcode_generator">
+			<div id="media-items">
+				<div class="media-item media-blank">
+				
+					<table class="describe"><tbody>
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_layout"><?php _e('Select a PDF file', 'ips'); ?></th>
+							<td>
+								<select name="issuu_pdf_id" id="issuu_pdf_id">
+									<?php
+									$pdf_files = new WP_Query( array( 'post_type' => 'attachment', 'nopaging' => true, 'post_status' => 'any', 'meta_query' => array( 
+										array(
+											'key' => 'issuu_pdf_id',
+											'value' => '',
+											'compare' => '!='
+										)
+									 ) ) );
+									if ( $pdf_files->have_posts() ) while ( $pdf_files->have_posts() ) : $pdf_files->the_post(); ?>
+										<option value="<?php echo get_post_meta( get_the_ID(), 'issuu_pdf_id', true ); ?>"><?php the_title(); ?></option>
+									<?php endwhile; ?>
+								</select>
+							</td>
+						</tr>
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_layout"><span class="alignleft"><?php _e('Layout', 'ips'); ?></span></label></th>
+							<td>
+								<p style="height:25px;"><input id="ips_layout" type="radio" name="ips_layout" value="1" <?php checked( isset( $ips_options['layout'] ) ? $ips_options['layout'] : 0 , 1 ); ?> /> <?php _e('Two up', 'ips'); ?><img src="<?php echo IPS_URL . '/images/layout-double-pages.png' ; ?>" height="16" style="margin-left:5px;" /></p>
+								<p><input type="radio" name="ips_layout" value="2" <?php checked( isset( $ips_options['layout'] ) ? $ips_options['layout'] : 0 , 2 ); ?> /> <?php _e('Single page', 'ips'); ?><img src="<?php echo IPS_URL . '/images/layout-single-page.png' ; ?>" height="16" style="margin-left:5px;" /></p>
+							</td>
+						</tr>
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_width"><span class="alignleft"><?php _e('Width', 'ips'); ?></span></label></th>
+							<td><input id="ips_width" type="number" min="0" max="2000" name="ips_width" value="<?php echo isset(  $ips_options['width'] ) ? (int)$ips_options['width'] : ''; ?>" /></td>
+						</tr>
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_height"><span class="alignleft"><?php _e('Height', 'ips'); ?></span></label></th>
+							<td><input id="ips_height" type="number" min="0" max="2000" name="ips_height" value="<?php echo isset(  $ips_options['height'] ) ? (int)$ips_options['height'] : ''; ?>" /></td>
+						</tr>
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_bgcolor"><span class="alignleft"><?php _e('Background color', 'ips'); ?></span></label></th>
+							<td># <input id="ips_bgcolor" style="width:65px;" type="text" maxlength="6" name="ips_bgcolor" value="<?php echo isset(  $ips_options['bgcolor'] ) ? $ips_options['bgcolor'] : ''; ?>" /></td>
+						</tr>
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_allow_full_screen"><span class="alignleft"><?php _e('Allow full screen', 'ips'); ?></span></label></th>
+							<td><input id="ips_allow_full_screen" name="ips_allow_full_screen_"  type="checkbox" <?php checked( isset( $ips_options['allow_full_screen'] ) ? $ips_options['allow_full_screen'] : '' , 1 ); ?> value="1" /></td>
+						</tr>
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_show_flip_buttons"><span class="alignleft"><?php _e('Always show flip buttons', 'ips'); ?></span></label></th>
+							<td><input id="ips_show_flip_buttons" name="ips_show_flip_buttons" type="checkbox" <?php checked( isset( $ips_options['show_flip_buttons'] ) ? $ips_options['show_flip_buttons'] : '' , 1 ); ?> value="1" /></td>
+						</tr>
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_autoflip"><span class="alignleft"><?php _e('Auto flip', 'ips'); ?></span></label></th>
+							<td>
+								<input type="checkbox" id="ips_autoflip" name="ips_autoflip" value="1" <?php checked( isset( $ips_options['autoflip'] ) ? $ips_options['autoflip'] : 0 , 1 ); ?> />
+							</td>
+						</tr>  
+						
+						<tr valign="top" class="field">
+							<th class="label" scope="row"><label for="ips_flip_timelaps"><span class="alignleft"><?php _e('Flip time laps', 'ips'); ?></span></label></th>
+							<td><input id="ips_flip_timelaps" type="number" step="100" min="1000" max="200000" name="ips_flip_timelaps" value="<?php echo isset(  $ips_options['flip_timelaps'] ) ? (int)$ips_options['flip_timelaps'] : '6000'; ?>" />
+								<p class="description"><?php _e('(in miliseconds - default : 6000)', 'ips'); ?></p>
+							</td>
+						</tr>
+						
+						<tr valign="top" class="field">
+							<td>
+								<input name="insert_issuu_pdf" type="submit" class="button-primary" id="insert_issuu_pdf" tabindex="5" accesskey="p" value="<?php _e('Insert the PDF', 'ips') ?>">
+							</td>
+						</tr>  
+					
+					</tbody></table>
+				</div>
+			</div>
+			
+		</form>
 		<?php die();
 	}
 
