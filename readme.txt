@@ -3,8 +3,8 @@ Contributors: benjaminniess, momo360modena
 Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
 Requires at least: 3.1
-Tested up to: 3.2.1
-Stable tag: 1.0.2
+Tested up to: 3.2.2
+Stable tag: 2.0
 
 == Description ==
 
@@ -18,7 +18,7 @@ Then you'll be abble to insert flipbooks inside your post without having to quit
 3. Go back to your WordPress admin and go to 'Settings > Issuu PDF Sync'
 4. Enter your Issuu API Key and Secret Key
 5. Now, when you will upload a PDF in your library (or directly in your post), it will be sent to Issuu
-6. If you want to add a flipbook into a post, clic on the 'add media' button, select your PDF and clic on the 'Issuu PDF' button.
+6. If you want to add a flipbook into a post, clic on the Issuu button in your tinyMCE editor and select your PDF file.
 7. For more info, go to the bottom of the 'Settings > Issuu PDF Sync' page 
 
 == Frequently Asked Questions ==
@@ -48,6 +48,8 @@ You will see all avaliable params inside the plugin option pannel
 3. The shortcode
 4. The Issuu Flipbook in a post
 5. The media edit view
+6. The Issuu button
+7. The shortcode generator
 
 == Changelog ==
 
@@ -57,4 +59,7 @@ You will see all avaliable params inside the plugin option pannel
 	* Fix bug on shortcode
 * 1.0.2
 	* Apply a new filter
-	* Clean useless js 
+	* Clean useless js
+* 2.0
+	* Add a new popin feature in the TinyMCE editor. Allow to generate a shortcode with all the Issuu options.
+	* Add the wmode transparent to the swf embed code

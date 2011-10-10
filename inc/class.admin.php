@@ -137,16 +137,29 @@ class IPS_Admin {
 						</td>
 					</tr>
 					
-					<tr><td colspan="2"><h3><?php _e('How to use the shortocde ?', 'ips'); ?></h3></td></tr>
+					<tr><td colspan="2"><h3><?php _e('How to insert a PDF Flipbook ?', 'ips'); ?></h3></td></tr>
 					
 					<tr><td colspan="2">
 						
 						<ol>
-							<li><?php _e('Click to the media button, choose a PDF document and click on the Issuu PDF button to insert the basic shortcode', 'ips'); ?></li>
-							<li><?php _e('If you want to add params for a specific PDF, you can follow these examples:', 'ips'); ?></li>
+							<li><?php _e('Make sure that the "Automatically upload PDFs to Issuu" box is checked or that you\'ve manually send the PDF to the Issuu website.', 'ips'); ?></li>
+							<li>
+								<?php _e('Click to Issuu button on the TinyMCE main bar', 'ips'); ?><br />
+								<img src="<?php echo IPS_URL; ?>/screenshot-6.png" />
+							</li>
+							<li>
+								<?php _e('Select your PDF file in the dropdown list and add some specific params if you need. Note that you can change the default settings in the settings page', 'ips'); ?><br />
+								<img src="<?php echo IPS_URL; ?>/screenshot-7.png" width="510" style="padding: 10px;" />
+							</li>
+							<li>
+								<?php _e('Click to the insert button and then the shortcode will be generated. You can easily cut and past this shortcode everywhere in your content', 'ips'); ?><br />
+								<img src="<?php echo IPS_URL; ?>/screenshot-8.png" />
+							</li>
 						</ol>
 						
 					</td></tr>
+					
+					<tr><td colspan="2"><h3><?php _e('How to manually use the shortcode ? (advanced usage)', 'ips'); ?></h3></td></tr>
 					<tr><td colspan="2">
 						<p><code><?php _e('[pdf issuu_pdf_id="id_of_your_PDF" width="500" height="300"]', 'ips'); ?></code></p>
 						<p class="description"><?php _e('In this example, we want to specify a width and a height only for this PDF', 'ips'); ?></p>
@@ -517,7 +530,7 @@ class IPS_Admin {
 			<div id="media-items">
 				<div class="media-item media-blank">
 				
-					<table class="describe"><tbody>
+					<table class="describe" style="width:100%;"><tbody>
 						
 						<tr valign="top" class="field">
 							<th class="label" scope="row"><label for="ips_layout"><?php _e('Select a PDF file', 'ips'); ?></th>
@@ -547,12 +560,12 @@ class IPS_Admin {
 						
 						<tr valign="top" class="field">
 							<th class="label" scope="row"><label for="ips_width"><span class="alignleft"><?php _e('Width', 'ips'); ?></span></label></th>
-							<td><input id="ips_width" type="number" min="0" max="2000" name="ips_width" value="<?php echo isset(  $ips_options['width'] ) ? (int)$ips_options['width'] : ''; ?>" /></td>
+							<td><input id="ips_width" type="number" min="0" max="2000" name="ips_width" value="<?php echo isset(  $ips_options['width'] ) ? (int)$ips_options['width'] : ''; ?>" /> px</td>
 						</tr>
 						
 						<tr valign="top" class="field">
 							<th class="label" scope="row"><label for="ips_height"><span class="alignleft"><?php _e('Height', 'ips'); ?></span></label></th>
-							<td><input id="ips_height" type="number" min="0" max="2000" name="ips_height" value="<?php echo isset(  $ips_options['height'] ) ? (int)$ips_options['height'] : ''; ?>" /></td>
+							<td><input id="ips_height" type="number" min="0" max="2000" name="ips_height" value="<?php echo isset(  $ips_options['height'] ) ? (int)$ips_options['height'] : ''; ?>" /> px</td>
 						</tr>
 						
 						<tr valign="top" class="field">

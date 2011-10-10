@@ -16,7 +16,7 @@
 				title : 'Issuu PDF Sync',
 				image : url+'/../images/issuu_logo.png',
 				onclick : function() {
-					tb_show('Issuu PDF Sync', ajaxurl+'?action=ips_shortcodePrinter&width=500&height=700');
+					tb_show('Issuu PDF Sync', ajaxurl+'?action=ips_shortcodePrinter&width=600&height=700');
 				}
 			});
 		},
