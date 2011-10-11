@@ -545,7 +545,7 @@ class IPS_Admin {
 										)
 									 ) ) );
 									if ( $pdf_files->have_posts() ) while ( $pdf_files->have_posts() ) : $pdf_files->the_post(); ?>
-										<option value="<?php echo get_post_meta( get_the_ID(), 'issuu_pdf_id', true ); ?>"><?php the_title(); ?></option>
+										<option value="<?php echo get_post_meta( get_the_ID(), 'issuu_pdf_id', true ); ?>"><?php echo substr( get_the_title(), 0, 35 ); ?></option>
 									<?php endwhile; ?>
 								</select>
 							</td>
@@ -617,8 +617,14 @@ class IPS_Admin {
 	 * @author Benjamin Niess
 	 */
 	function addButtons() {
+		global $ips_options;
+		
 		// Don't bother doing this stuff if the current user lacks permissions
 		if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') )
+			return false;
+		
+		// Does the admin want to display the Issuu button ?
+		if ( !isset( $ips_options['add_ips_button'] ) || (int)$ips_options['add_ips_button'] != 1 )
 			return false;
 		
 		if ( get_user_option('rich_editing') == 'true') {

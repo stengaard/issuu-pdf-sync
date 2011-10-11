@@ -4,7 +4,7 @@ Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
 Requires at least: 3.1
 Tested up to: 3.2.2
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 == Description ==
 
@@ -63,3 +63,5 @@ You will see all avaliable params inside the plugin option pannel
 * 2.0
 	* Add a new popin feature in the TinyMCE editor. Allow to generate a shortcode with all the Issuu options.
 	* Add the wmode transparent to the swf embed code
+* 2.0.1
+	* Fix minor bug
