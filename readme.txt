@@ -3,8 +3,8 @@ Contributors: benjaminniess, momo360modena
 Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
 Requires at least: 3.1
-Tested up to: 3.2.2
-Stable tag: 2.0.1
+Tested up to: 3.3
+Stable tag: 2.0.2
 
 == Description ==
 
@@ -65,3 +65,6 @@ You will see all avaliable params inside the plugin option pannel
 	* Add the wmode transparent to the swf embed code
 * 2.0.1
 	* Fix minor bug
+* 2.2.2
+	* Security update thanks to http://secu.boiteaweb.fr/
+	* Remove useless file
