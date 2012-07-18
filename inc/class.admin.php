@@ -19,12 +19,16 @@ class IPS_Admin {
 		add_action( 'admin_init', array( &$this, 'checkJsPdfEdition' ) );
 		add_action( 'admin_menu', array( &$this, 'addPluginMenu' ) );
 		
-		wp_enqueue_script( 'jquery' );
+		add_action( 'admin_init', array( &$this, 'init' ) );
 		
 		// Add the tinyMCE button
 		add_action( 'admin_init', array (&$this, 'addButtons' ) );
 		add_action( 'wp_ajax_ips_shortcodePrinter', array( &$this, 'wp_ajax_fct' ) );
 		
+	}
+	
+	function init() {
+		wp_enqueue_script( 'jquery' );
 	}
 	
 	function addPluginMenu() {
