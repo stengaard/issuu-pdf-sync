@@ -105,6 +105,17 @@ class IPS_Admin {
 					</tr>
 					
 					<tr valign="top" class="field">
+						<th class="label" scope="row"><label for="ips[custom_layout]"><span class="alignleft"><?php _e('Custom layout', 'ips'); ?></span></label></th>
+						<td>
+							<p style="height:150px;"><input id="ips-custom-layout-default" type="radio" name="ips[custom_layout]" value="default" <?php checked( !isset( $ips_options['custom_layout'] ) || $ips_options['custom_layout'] == 'default' ? true : false, true ); ?> /> <label for="ips-custom-layout-default"><?php _e('Default', 'ips'); ?></label><img src="<?php echo IPS_URL . '/images/default.png' ; ?>" height="100" style="margin-left:15px;" /></p>
+							<?php $skins = array( 'basicBlue', 'crayon', 'whiteMenu' );
+							foreach ( $skins as $skin ) : ?>
+								<p><input type="radio" id="ips-custom-layout-<?php echo $skin; ?>" name="ips[custom_layout]" value="<?php echo $skin; ?>" <?php checked( isset( $ips_options['custom_layout'] )  && $ips_options['custom_layout'] == $skin ? true : false , true ); ?> /> <label for="ips-custom-layout-<?php echo $skin; ?>"><?php echo $skin; ?></label><img src="<?php echo IPS_URL . '/images/sample_' . $skin . '.jpg' ; ?>" height="100" style="margin-left:5px;" /></p>
+							<?php endforeach; ?>
+						</td>
+					</tr>
+					
+					<tr valign="top" class="field">
 						<th class="label" scope="row"><label for="ips[width]"><span class="alignleft"><?php _e('Width', 'ips'); ?></span></label></th>
 						<td><input id="ips[width]" type="number" min="0" max="2000" name="ips[width]" value="<?php echo isset(  $ips_options['width'] ) ? (int)$ips_options['width'] : ''; ?>" /></td>
 					</tr>

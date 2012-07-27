@@ -4,7 +4,7 @@ Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
 Requires at least: 3.1
 Tested up to: 3.4.1
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 
 == Description ==
 
@@ -19,7 +19,8 @@ Then you'll be abble to insert flipbooks inside your post without having to quit
 4. Enter your Issuu API Key and Secret Key
 5. Now, when you will upload a PDF in your library (or directly in your post), it will be sent to Issuu
 6. If you want to add a flipbook into a post, clic on the Issuu button in your tinyMCE editor and select your PDF file.
-7. For more info, go to the bottom of the 'Settings > Issuu PDF Sync' page 
+7. IMPORTANT : If you want to use the custom layouts, you first need to copy the crossdomain.xml file located in the root folder of the plugin to the root folder of your website.
+8. For more info, go to the bottom of the 'Settings > Issuu PDF Sync' page 
 
 == Frequently Asked Questions ==
 
@@ -41,6 +42,14 @@ In this example, we want to specify a width and a height only for this PDF
 In this other example, we want to specify the browsing layout (one page presentation) and we want the PDF pages to autoflip each 4 seconds
 
 You will see all avaliable params inside the plugin option pannel
+
+= I choose another skin but it doesn't work. why ?
+
+As mentioned in the installation steps, you first need to copy the crossdomain.xml file located in the root folder of the plugin to the root folder of your website.
+
+= How to customize buttons labels ? =
+
+If you want to make some customisation in the Issuu player, you need to copy the 'issuu-skins' folder into your theme. Then, you'll be able to work on the skins.fla file or on the layout.xml file within your theme.
 
 == Screenshots ==
 1. The config page
@@ -65,9 +74,11 @@ You will see all avaliable params inside the plugin option pannel
 	* Add the wmode transparent to the swf embed code
 * 2.0.1
 	* Fix minor bug
-* 2.2.2
+* 2.0.2
 	* Security update thanks to http://secu.boiteaweb.fr/
 	* Remove useless file
-* 2.2.3
+* 2.0.3
 	* Add hook after shortcode display ( action : after-ips-shortcode)
 	* Fix admin notice
+* 2.0.4
+	* Add new feature to choose custom skins
