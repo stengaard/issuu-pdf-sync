@@ -397,7 +397,7 @@ class IPS_Admin {
 		if ( empty( $issuu_pdf_id ) )
 			return $form_fields;
 		
-		$form_fields["url"]["html"] .= "<button type='button' class='button urlissuupdfsync issuu-pdf-" . $issuu_pdf_id . "' value='[pdf issuu_pdf_id=\"" . $issuu_pdf_id . "\"]' title='[pdf issuu_pdf_id=\"" . $issuu_pdf_id . "\"]'>" . _( 'Issuu PDF' ) . "</button>";
+		$form_fields["url"]["html"] .= "<button type=\"button\" class='button urlissuupdfsync issuu-pdf-" . $issuu_pdf_id . "' data-link-url=\"[pdf issuu_pdf_id=" . $issuu_pdf_id . "]\" title='[pdf issuu_pdf_id=\"" . $issuu_pdf_id . "\"]'>" . _( 'Issuu PDF' ) . "</button>";
 		
 		return $form_fields;
 	}
@@ -539,12 +539,14 @@ class IPS_Admin {
 	 */
 	function wp_ajax_fct(){
 		global $ips_options, $wp_styles;
-		$dir = $wp_styles->text_direction;
-		$ver = md5( "$wp_styles->concat_version{$dir}" );
+		if ( !empty($wp_styles->concat) ) {
+			$dir = $wp_styles->text_direction; 
+			$ver = md5("$wp_styles->concat_version{$dir}");
 		
-		// Make the href for the style of box
-		$href = $wp_styles->base_url . "/wp-admin/load-styles.php?c={$zip}&dir={$dir}&load=media&ver=$ver";
-		echo "<link rel='stylesheet' href='" . esc_attr( $href ) . "' type='text/css' media='all' />\n";
+			// Make the href for the style of box
+			$href = $wp_styles->base_url . "/wp-admin/load-styles.php?c={$zip}&dir={$dir}&load=media&ver=$ver";
+			echo "<link rel='stylesheet' href='" . esc_attr( $href ) . "' type='text/css' media='all' />\n";
+		}
 		
 		?>
 		<h3 class="media-title"><?php _e('Insert an Issuu PDF Flipbook', 'ips'); ?></h3>

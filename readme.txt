@@ -4,7 +4,7 @@ Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
 Requires at least: 3.1
 Tested up to: 3.4.1
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 
 == Description ==
 
@@ -62,23 +62,34 @@ If you want to make some customisation in the Issuu player, you need to copy the
 
 == Changelog ==
 
-* 1.0
-	* First release
-* 1.0.1
-	* Fix bug on shortcode
-* 1.0.2
-	* Apply a new filter
-	* Clean useless js
-* 2.0
-	* Add a new popin feature in the TinyMCE editor. Allow to generate a shortcode with all the Issuu options.
-	* Add the wmode transparent to the swf embed code
-* 2.0.1
-	* Fix minor bug
-* 2.0.2
-	* Security update thanks to http://secu.boiteaweb.fr/
-	* Remove useless file
+* 2.0.5
+	* Fix bug in pdf insertion
+	* Fix notices in admin
+
+* 2.0.4
+	* Add new feature to choose custom skins
+
 * 2.0.3
 	* Add hook after shortcode display ( action : after-ips-shortcode)
 	* Fix admin notice
-* 2.0.4
-	* Add new feature to choose custom skins
+	
+* 2.0.2
+	* Security update thanks to http://secu.boiteaweb.fr/
+	* Remove useless file
+	
+* 2.0
+	* Add a new popin feature in the TinyMCE editor. Allow to generate a shortcode with all the Issuu options.
+	* Add the wmode transparent to the swf embed code
+	
+* 1.0.2
+	* Apply a new filter
+	* Clean useless js
+	
+* 2.0.1
+	* Fix minor bug
+	
+* 1.0.1
+	* Fix bug on shortcode
+	
+* 1.0
+	* First release
