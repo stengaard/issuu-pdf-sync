@@ -1,10 +1,11 @@
 <?php
+
 /*
  * The ISSUU PDF shortcode. Usage doc on the admin pannel
  */
-add_shortcode('pdf','issuu_pdf_embeder'); 
+add_shortcode( 'pdf','issuu_pdf_embeder' );
+
 function issuu_pdf_embeder( $atts, $content = null ) {
-	
 	global $ips_options;
 	
 	if ( isset( $ips_options['layout'] ) && $ips_options['layout'] == 2 )
@@ -13,33 +14,35 @@ function issuu_pdf_embeder( $atts, $content = null ) {
 		$layout = "browsing";
 	
 	extract( shortcode_atts( array( 
-		'issuu_pdf_id' => null, 
-		'width' => $ips_options['width'], 
-		'height' => $ips_options['height'], 
-		'layout' => $layout,
+		'issuu_pdf_id'    => null, 
+		'width'           => $ips_options['width'], 
+		'height'          => $ips_options['height'], 
+		'layout'          => $layout,
 		'backgroundColor' => $ips_options['bgcolor'],
-		'autoFlipTime' => $ips_options['flip_timelaps'],
-		'autoFlip' => ( isset( $ips_options['autoflip'] ) && $ips_options['autoflip'] == 1 ) ? 'true' : 'false', 
-		'showFlipBtn' => ( isset( $ips_options['show_flip_buttons'] ) && $ips_options['show_flip_buttons'] == 1 ) ? 'true' : 'false', 
+		'autoFlipTime'    => $ips_options['flip_timelaps'],
+		'autoFlip'        => ( isset( $ips_options['autoflip'] ) && $ips_options['autoflip'] == 1 ) ? 'true' : 'false', 
+		'showFlipBtn'     => ( isset( $ips_options['show_flip_buttons'] ) && $ips_options['show_flip_buttons'] == 1 ) ? 'true' : 'false', 
 		'allowfullscreen' => ( isset( $ips_options['allow_full_screen'] ) && $ips_options['allow_full_screen'] == 1 ) ? 'true' : 'false',
-		'customLayout' => ( isset( $ips_options['custom_layout'] ) ) ? $ips_options['custom_layout'] : false 
+		'customLayout'    => ( isset( $ips_options['custom_layout'] ) ) ? $ips_options['custom_layout'] : false 
 		),
-		$atts ) ); 
+		$atts
+	) ); 
 	
 	// Check if the required param is set
-	if ( empty( $issuu_pdf_id )) {
+	if ( empty( $issuu_pdf_id ) ) {
 		return false;
 	}
-	if ( isset( $customLayout ) && !empty( $customLayout ) ) {
-		if ( is_dir( TEMPLATEPATH.'/issuu-skins/' . $customLayout )) {
-			$layout_url = '&layout=' . ( get_bloginfo( 'template_directory' ) . '/issuu-skins/' . $customLayout . '/layout.xml' );
+
+	if ( isset( $customLayout ) && ! empty( $customLayout ) ) {
+		if ( is_dir( TEMPLATEPATH . '/issuu-skins/' . $customLayout ) ) {
+			$layout_url   = '&layout=' . ( get_bloginfo( 'template_directory' ) . '/issuu-skins/' . $customLayout . '/layout.xml' );
 			$layout_embed = ' layout="' . ( get_bloginfo( 'template_directory' ) . '/issuu-skins/' . $customLayout . '/layout.xml' ) . '"';
 		} else {
-			$layout_url = '&layout=' . ( IPS_URL . '/issuu-skins/' . $customLayout . '/layout.xml' );
+			$layout_url   = '&layout=' . ( IPS_URL . '/issuu-skins/' . $customLayout . '/layout.xml' );
 			$layout_embed = ' layout="' . ( IPS_URL . '/issuu-skins/' . $customLayout . '/layout.xml' ) . '"';
 		}
 	} else {
-		$layout_url = '';
+		$layout_url   = '';
 		$layout_embed = '';
 	}
 
@@ -59,6 +62,7 @@ function issuu_pdf_embeder( $atts, $content = null ) {
 		<?php do_action( 'after-ips-shortcode', $issuu_pdf_id ); ?>
 	 
 	<?php
+
 	// Return the shortcode content
 	$content = ob_get_contents();
 	ob_end_clean();

@@ -3,7 +3,7 @@
 Plugin Name: Issuu PDF Sync
 Plugin URI: http://beapi.fr
 Description: Allow to create PDF Flipbooks with the http://issuu.com service.
-Version: 2.0.5
+Version: 2.0.6
 Author: Benjamin Niess
 Author URI: http://beapi.fr
 Text Domain: ips
@@ -24,7 +24,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-define( 'IPS_VERSION', '2.0.5' );
+define( 'IPS_VERSION', '2.0.6' );
 define( 'IPS_URL', plugins_url( '', __FILE__ ) );
 define( 'IPS_DIR', dirname( __FILE__ ) );
 
@@ -51,5 +51,5 @@ function IPS_Init() {
 	if ( is_admin() )
 		$ips['admin'] = new IPS_Admin();
 }
+
 add_action( 'plugins_loaded', 'IPS_Init' );
-?>
