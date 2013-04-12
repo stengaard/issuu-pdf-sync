@@ -301,6 +301,7 @@ class IPS_Admin {
 			'action'   => 'issuu.document.url_upload',
 			'apiKey'   => $ips_options['issuu_api_key'],
 			'format'   => 'json',
+			'name'     => $post_data->post_name,
 			'slurpUrl' => $post_data->guid,
 			'title'    => sanitize_title( $post_data->post_title )
 		);
@@ -345,8 +346,11 @@ class IPS_Admin {
 			return false;
 		
 		// Update the attachment post meta with the Issuu PDF ID
-		update_post_meta( $post_id, 'issuu_pdf_id', $response->rsp->_content->document->documentId );
-		update_post_meta( $post_id, 'issuu_pdf_name', $response->rsp->_content->document->name );
+		$document = $response->rsp->_content->document;
+
+		update_post_meta( $post_id, 'issuu_pdf_id', $document->documentId );
+		update_post_meta( $post_id, 'issuu_pdf_username', $document->username );
+		update_post_meta( $post_id, 'issuu_pdf_name', $document->name );
 		
 		return $response->rsp->_content->document->documentId;
 	}
@@ -434,8 +438,12 @@ class IPS_Admin {
 		
 		// Check on post meta if the PDF has already been uploaded on Issuu
 		$issuu_pdf_id = get_post_meta( $attachment->ID, 'issuu_pdf_id', true );
+		$issuu_pdf_username = get_post_meta( $attachment->ID, 'issuu_pdf_username', true );
+		$issuu_pdf_name = get_post_meta( $attachment->ID, 'issuu_pdf_name', true );
 		$disable_auto_upload = get_post_meta( $attachment->ID, 'disable_auto_upload', true );
 
+		$issuu_url = sprintf( 'http://issuu.com/%s/docs/%s', $issuu_pdf_username, $issuu_pdf_name );
+		
 		// Upload the PDF to Issuu if necessary and if the Auto upload feature is enabled
 		if ( empty( $issuu_pdf_id ) && isset( $ips_options['auto_upload'] ) && $ips_options['auto_upload'] == 1 && $disable_auto_upload != 1)
 			$issuu_pdf_id = $this->sendPDFToIssuu( $attachment->ID );
@@ -452,6 +460,24 @@ class IPS_Admin {
 				'value'        => $issuu_pdf_id
 			);
 			
+			$form_fields['issuu_pdf_username'] = array(
+				'show_in_edit' => true,
+				'label'        => __( 'Issuu Document Username', 'isp' ),
+				'value'        => $issuu_pdf_username
+			);
+			
+			$form_fields['issuu_pdf_name'] = array(
+				'show_in_edit' => true,
+				'label'        => __( 'Issuu Document Name', 'isp' ),
+				'value'        => $issuu_pdf_name
+			);
+			
+			$form_fields['issuu_pdf_url'] = array(
+				'show_in_edit' => true,
+				'label'        => __( 'Issuu Document URL', 'isp' ),
+				'value'        => $issuu_url
+			);
+
 			$form_fields['issuu_pdf_sync_auto_upload'] = array(
 				'show_in_edit' => true,
 				'label'        => __( 'Issuu Auto Upload', 'isp' ),
