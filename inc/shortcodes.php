@@ -23,7 +23,7 @@ function issuu_pdf_embeder( $atts, $content = null ) {
 		'autoFlip'        => ( isset( $ips_options['autoflip'] ) && $ips_options['autoflip'] == 1 ) ? 'true' : 'false', 
 		'showFlipBtn'     => ( isset( $ips_options['show_flip_buttons'] ) && $ips_options['show_flip_buttons'] == 1 ) ? 'true' : 'false', 
 		'allowfullscreen' => ( isset( $ips_options['allow_full_screen'] ) && $ips_options['allow_full_screen'] == 1 ) ? 'true' : 'false',
-		'customLayout'    => ( isset( $ips_options['custom_layout'] ) ) ? $ips_options['custom_layout'] : false 
+		'customLayout'    => ( isset( $ips_options['custom_layout'] ) && $ips_options['custom_layout'] != 'default' ) ? $ips_options['custom_layout'] : false 
 	), $atts ) ); 
 	
 	// Check if the required param is set
