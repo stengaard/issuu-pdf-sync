@@ -1,114 +1,114 @@
+# Copyright (C) 2013 Issuu PDF Sync
+# This file is distributed under the same license as the Issuu PDF Sync package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Issuu PDF Sync\n"
+"Project-Id-Version: Issuu PDF Sync 2.2.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/issuu-pdf-sync\n"
 "POT-Creation-Date: 2013-12-19 14:59:35+00:00\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
-"Language-Team: Pronamic <info@pronamic.nl>\n"
-"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: inc/class.admin.php:36
 msgid "Options for Issuu PDF Sync"
-msgstr "Instellingen voor Issuu PDF Sync"
+msgstr ""
 
+#. #-#-#-#-#  ips.pot (Issuu PDF Sync 2.2.4)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: inc/class.admin.php:36 inc/class.admin.php:69 inc/class.admin.php:490
 msgid "Issuu PDF Sync"
-msgstr "Issuu PDF Sync"
+msgstr ""
 
 #: inc/class.admin.php:61
 msgid "Options updated!"
-msgstr "Instellingen bijgewerkt"
+msgstr ""
 
 #: inc/class.admin.php:74
 msgid "Issuu configuration"
-msgstr "Issuu configuratie"
+msgstr ""
 
 #: inc/class.admin.php:77
 msgid "Issuu API Key"
-msgstr "Issuu API sleutel"
+msgstr ""
 
 #: inc/class.admin.php:78
 msgid "Get an Issuu API Key"
-msgstr "Verkrijg een Issuu API Key"
+msgstr ""
 
 #: inc/class.admin.php:84
 msgid "Issuu private key"
-msgstr "Issuu privé sleutel"
+msgstr ""
 
 #: inc/class.admin.php:89
 msgid "Automatically upload PDFs to Issuu"
-msgstr "Upload PDF's automatisch naar Issuu"
+msgstr ""
 
 #: inc/class.admin.php:94
 msgid "Add the Issuu PDF Sync button to TinyMCE"
-msgstr "Voeg de Issuu PDF Sync button toe aan TinyMCE"
+msgstr ""
 
 #: inc/class.admin.php:99
 msgid "Access"
-msgstr "Toegang"
+msgstr ""
 
 #: inc/class.admin.php:110
 msgid "Public"
-msgstr "Publiek"
+msgstr ""
 
 #: inc/class.admin.php:111
 msgid "Private"
-msgstr "Privé"
+msgstr ""
 
 #: inc/class.admin.php:116
 msgid "Default embed code configuration"
-msgstr "Standaard embed code configuratie"
+msgstr ""
 
 #: inc/class.admin.php:119 inc/class.admin.php:696
 msgid "Layout"
-msgstr "Layout"
+msgstr ""
 
 #: inc/class.admin.php:121 inc/class.admin.php:698
 msgid "Two up"
-msgstr "Dubbel"
+msgstr ""
 
 #: inc/class.admin.php:122 inc/class.admin.php:699
 msgid "Single page"
-msgstr "Enkel"
+msgstr ""
 
 #: inc/class.admin.php:127
 msgid "Custom layout"
-msgstr "Maatwerk layout"
+msgstr ""
 
 #: inc/class.admin.php:129
 msgid "Default"
-msgstr "Standaard"
+msgstr ""
 
 #: inc/class.admin.php:138 inc/class.admin.php:704
 msgid "Width"
-msgstr "Breedte"
+msgstr ""
 
 #: inc/class.admin.php:143 inc/class.admin.php:709
 msgid "Height"
-msgstr "Hoogte"
+msgstr ""
 
 #: inc/class.admin.php:148 inc/class.admin.php:714
 msgid "Background color"
-msgstr "Achtergrond kleur"
+msgstr ""
 
 #: inc/class.admin.php:153 inc/class.admin.php:719
 msgid "Allow full screen"
-msgstr "Volledig scherm toestaan"
+msgstr ""
 
 #: inc/class.admin.php:158 inc/class.admin.php:724
 msgid "Always show flip buttons"
-msgstr "Flip buttons weergeven toestaan"
+msgstr ""
 
 #: inc/class.admin.php:163 inc/class.admin.php:729
 msgid "Auto flip"
-msgstr "Auto flip"
+msgstr ""
 
 #: inc/class.admin.php:170 inc/class.admin.php:736
 msgid "Flip time laps"
@@ -116,11 +116,11 @@ msgstr ""
 
 #: inc/class.admin.php:172 inc/class.admin.php:738
 msgid "(in miliseconds - default : 6000)"
-msgstr "(in milliseconden - standaard : 6000)"
+msgstr ""
 
 #: inc/class.admin.php:178
 msgid "Save Changes"
-msgstr "Wijzigingen opslaan"
+msgstr ""
 
 #: inc/class.admin.php:185
 msgid "How to insert a PDF Flipbook ?"
@@ -154,7 +154,7 @@ msgstr ""
 
 #: inc/class.admin.php:209
 msgid "[pdf issuu_pdf_id=\"id_of_your_PDF\" width=\"500\" height=\"300\"]"
-msgstr "[pdf issuu_pdf_id=\"id_van_uw_PDF\" width=\"500\" height=\"300\"]"
+msgstr ""
 
 #: inc/class.admin.php:210
 msgid ""
@@ -166,8 +166,6 @@ msgid ""
 "[pdf issuu_pdf_id=\"id_of_your_PDF\" layout=\"browsing\" autoFlip=\"true\" "
 "autoFlipTime=\"4000\"]"
 msgstr ""
-"[pdf issuu_pdf_id=\"id_van_uw_PDF\" layout=\"browsing\" autoFlip=\"true\" "
-"autoFlipTime=\"4000\"]"
 
 #: inc/class.admin.php:213
 msgid ""
@@ -181,15 +179,15 @@ msgstr ""
 
 #: inc/class.admin.php:220
 msgid "The ISSUU PDF ID"
-msgstr "De Issuu PDF ID"
+msgstr ""
 
 #: inc/class.admin.php:225
 msgid "The width of the animation in pixels"
-msgstr "De breedte van de animatie in pixels"
+msgstr ""
 
 #: inc/class.admin.php:230
 msgid "The height of the animation in pixels"
-msgstr "De hoogte van de animatie in pixels"
+msgstr ""
 
 #: inc/class.admin.php:235
 msgid ""
@@ -225,97 +223,99 @@ msgstr ""
 
 #: inc/class.admin.php:456
 msgid "Issuu PDF"
-msgstr "Issuu PDF"
+msgstr ""
 
 #: inc/class.admin.php:460
 msgid "Issuu Document ID"
-msgstr "Issuu document ID"
+msgstr ""
 
 #: inc/class.admin.php:466
 msgid "Issuu Document Username"
-msgstr "Issuu document gebruikersnaam"
+msgstr ""
 
 #: inc/class.admin.php:472
 msgid "Issuu Document Name"
-msgstr "Issuu document naam"
+msgstr ""
 
 #: inc/class.admin.php:478
 msgid "Issuu Document URL"
-msgstr "Issuu document URL"
+msgstr ""
 
 #: inc/class.admin.php:484
 msgid "Issuu Auto Upload"
-msgstr "Issuu automatisch upload"
+msgstr ""
 
 #: inc/class.admin.php:590
 msgid "Issuu status"
-msgstr "Issuu status"
+msgstr ""
 
 #: inc/class.admin.php:592 inc/sync-input.php:4
 msgid "This PDF is already synchronised on Issuu"
-msgstr "Deze PDF is al gesynchroniseerd met Issuu"
+msgstr ""
 
 #: inc/class.admin.php:592 inc/sync-input.php:11
 msgid "Click here to delete this PDF from Issuu"
-msgstr "Klik hier om deze PDF te verwijderen uit Issuu"
+msgstr ""
 
 #: inc/class.admin.php:594 inc/sync-input.php:21
 msgid "This PDF is not synchronised on Issuu"
-msgstr "Deze PDF is niet gesynchroniseerd met Issuu"
+msgstr ""
 
 #: inc/class.admin.php:594 inc/sync-input.php:27
 msgid "Click here to send this PDF to Issuu"
-msgstr "Klik hier om deze PDF naar Issuu te sturen"
+msgstr ""
 
 #: inc/class.admin.php:601 inc/sync-input.php:41
 msgid "Are you sure you want to send this PDF on Issuu ?"
-msgstr "Weet u zeker dat u deze PDF wilt opsturen naar Issuu?"
+msgstr ""
 
 #: inc/class.admin.php:604 inc/class.admin.php:624 inc/sync-input.php:44
 #: inc/sync-input.php:64
 msgid "Loading"
-msgstr "Bezig met laden"
+msgstr ""
 
 #: inc/class.admin.php:609 inc/sync-input.php:49
 msgid "An error occured during synchronisation with Issuu"
-msgstr "Er is een fout opgetreden tijdens de synchronisatie met Issuu"
+msgstr ""
 
 #: inc/class.admin.php:612 inc/sync-input.php:52
 msgid "Your PDF is now on Issuu !"
-msgstr "Uw PDF staat nu op Issuu!"
+msgstr ""
 
 #: inc/class.admin.php:621 inc/sync-input.php:61
 msgid "Are you sure you want to delete this PDF from Issuu ?"
-msgstr "Weet u zeker dat u deze PDF wilt verwijderen uit Issuu?"
+msgstr ""
 
 #: inc/class.admin.php:629 inc/sync-input.php:69
 msgid "Your PDF has been successfuly deleted"
-msgstr "Uw PDF is succesvol verwijderd"
+msgstr ""
 
 #: inc/class.admin.php:632 inc/sync-input.php:72
 msgid "An error occured during PDF deletion"
-msgstr "Er is een fout opgetreden tijdens PDF verwijderen"
+msgstr ""
 
 #: inc/class.admin.php:660
 msgid "Insert an Issuu PDF Flipbook"
-msgstr "Een Issuu PDF Flipbook invoegen"
+msgstr ""
 
 #: inc/class.admin.php:669
 msgid "Select a PDF file"
-msgstr "Selecteer een PDF-bestand"
+msgstr ""
 
 #: inc/class.admin.php:744
 msgid "Insert the PDF"
-msgstr "De PDF invoegen"
+msgstr ""
 
 #: inc/shortcodes.php:43
 msgid "Loading..."
-msgstr "Bezig met laden..."
+msgstr ""
 
+#. #-#-#-#-#  ips.pot (Issuu PDF Sync 2.2.4)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
+#. #-#-#-#-#  ips.pot (Issuu PDF Sync 2.2.4)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "http://beapi.fr"
-msgstr "http://beapi.fr"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid "Allow to create PDF Flipbooks with the http://issuu.com service."
@@ -323,22 +323,4 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Benjamin Niess"
-msgstr "Benjamin Niess"
-
-#~ msgid ""
-#~ "Click to the media button, choose a PDF document and click on the Issuu "
-#~ "PDF button to insert the basic shortcode"
-#~ msgstr ""
-#~ "Cliquez sur le bontou \"ajouter un media\", sÃ©lectionnez votre fichier "
-#~ "PDF et cliquez sur le bouton \"PDF Issuu\" pour insÃ©rer le shortcode de "
-#~ "base"
-
-#~ msgid ""
-#~ "If you want to add params for a specific PDF, you can follow these "
-#~ "examples:"
-#~ msgstr ""
-#~ "Si vous souhaitez ajouter des paramÃ¨tres pour un PDF spÃ©cifique, vous "
-#~ "pouvez suivre les exemples suivants :"
-
-#~ msgid "Auto flip (every 6 seconds)"
-#~ msgstr "DÃ©filement automatique (toutes les 6 secondes)"
+msgstr ""

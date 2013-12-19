@@ -63,16 +63,27 @@ function issuu_pdf_embeder( $atts, $content = null ) {
 
 	$flashvars = build_query( $parameters );
 
+	// Dimensions
+	if ( strpos( $width, 'px' ) === false && strpos( $width, '%' ) === false ) {
+		$width .= 'px';
+	}
+
+	if ( strpos( $height, 'px' ) === false && strpos( $height, '%' ) === false ) {
+		$height .= 'px';
+	}
+
+	$style = sprintf( 'width: %s; height: %s', $width, $height );
+	
 	// Start to get the content to return it at the end
 	ob_start(); ?>
 	
 		<div>
-			<object style="width:<?php echo $width; ?>px;height:<?php echo $height; ?>px" >
+			<object style="<?php echo esc_attr( $style ); ?>" >
 				<param name="movie" value="<?php echo esc_attr( $issuu_swf_url ); ?>" />
 				<param name="allowfullscreen" value="<?php echo $allowfullscreen; ?>" />
 				<param name="wmode" value="transparent" />
 				<param name="menu" value="false" />
-				<embed src="http://static.issuu.com/webembed/viewers/style1/v1/IssuuViewer.swf" <?php echo $layout_embed; ?> type="application/x-shockwave-flash" allowfullscreen="<?php echo $allowfullscreen; ?>" wmode="transparent" menu="false" style="width:<?php echo $width; ?>px;height:<?php echo $height; ?>px" flashvars="<?php echo esc_attr( $flashvars ); ?>" />
+				<embed src="http://static.issuu.com/webembed/viewers/style1/v1/IssuuViewer.swf" <?php echo $layout_embed; ?> type="application/x-shockwave-flash" allowfullscreen="<?php echo $allowfullscreen; ?>" wmode="transparent" menu="false" style="<?php echo esc_attr( $style ); ?>" flashvars="<?php echo esc_attr( $flashvars ); ?>" />
 			</object>
 		</div>
 		

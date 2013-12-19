@@ -4,7 +4,7 @@ Donate link: http://beapi.fr/donate
 Tags: Issuu, flipbook, PDF, upload, synchronisation, flash, flip, book
 Requires at least: 3.1
 Tested up to: 3.4.1
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,10 @@ If you want to make some customisation in the Issuu player, you need to copy the
 
 == Changelog ==
 
+= 2.2.5 =
+*	Added support for percent width and height values in the shortcode.
+*	Added POT file for translators.
+
 = 2.2.4 =
 *	Skipping a few version because version 2.2.2 and 2.2.3 were accidentally tagged
 *	Added Russian translations by Konstantin Ryabenko
@@ -123,3 +127,9 @@ If you want to make some customisation in the Issuu player, you need to copy the
 
 = 2.0.8 =
 *	This version fixes a Firefox related bug. 
+
+
+== Developers ==
+
+*        php ~/wp/svn/i18n-tools/makepot.php wp-plugin ~/wp/git/issuu-pdf-sync ~/wp/git/issuu-pdf-sync/languages/ips.pot
+
