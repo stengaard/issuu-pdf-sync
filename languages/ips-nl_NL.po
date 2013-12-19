@@ -1,0 +1,344 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Issuu PDF Sync\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/issuu-pdf-sync\n"
+"POT-Creation-Date: 2013-12-19 14:59:35+00:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
+"Language-Team: Pronamic <info@pronamic.nl>\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: inc/class.admin.php:36
+msgid "Options for Issuu PDF Sync"
+msgstr "Instellingen voor Issuu PDF Sync"
+
+#. Plugin Name of the plugin/theme
+#: inc/class.admin.php:36 inc/class.admin.php:69 inc/class.admin.php:490
+msgid "Issuu PDF Sync"
+msgstr "Issuu PDF Sync"
+
+#: inc/class.admin.php:61
+msgid "Options updated!"
+msgstr "Instellingen bijgewerkt"
+
+#: inc/class.admin.php:74
+msgid "Issuu configuration"
+msgstr "Issuu configuratie"
+
+#: inc/class.admin.php:77
+msgid "Issuu API Key"
+msgstr "Issuu API sleutel"
+
+#: inc/class.admin.php:78
+msgid "Get an Issuu API Key"
+msgstr "Verkrijg een Issuu API Key"
+
+#: inc/class.admin.php:84
+msgid "Issuu private key"
+msgstr "Issuu privé sleutel"
+
+#: inc/class.admin.php:89
+msgid "Automatically upload PDFs to Issuu"
+msgstr "Upload PDF's automatisch naar Issuu"
+
+#: inc/class.admin.php:94
+msgid "Add the Issuu PDF Sync button to TinyMCE"
+msgstr "Voeg de Issuu PDF Sync button toe aan TinyMCE"
+
+#: inc/class.admin.php:99
+msgid "Access"
+msgstr "Toegang"
+
+#: inc/class.admin.php:110
+msgid "Public"
+msgstr "Publiek"
+
+#: inc/class.admin.php:111
+msgid "Private"
+msgstr "Privé"
+
+#: inc/class.admin.php:116
+msgid "Default embed code configuration"
+msgstr "Standaard embed code configuratie"
+
+#: inc/class.admin.php:119 inc/class.admin.php:696
+msgid "Layout"
+msgstr "Layout"
+
+#: inc/class.admin.php:121 inc/class.admin.php:698
+msgid "Two up"
+msgstr "Dubbel"
+
+#: inc/class.admin.php:122 inc/class.admin.php:699
+msgid "Single page"
+msgstr "Enkel"
+
+#: inc/class.admin.php:127
+msgid "Custom layout"
+msgstr "Maatwerk layout"
+
+#: inc/class.admin.php:129
+msgid "Default"
+msgstr "Standaard"
+
+#: inc/class.admin.php:138 inc/class.admin.php:704
+msgid "Width"
+msgstr "Breedte"
+
+#: inc/class.admin.php:143 inc/class.admin.php:709
+msgid "Height"
+msgstr "Hoogte"
+
+#: inc/class.admin.php:148 inc/class.admin.php:714
+msgid "Background color"
+msgstr "Achtergrond kleur"
+
+#: inc/class.admin.php:153 inc/class.admin.php:719
+msgid "Allow full screen"
+msgstr "Volledig scherm toestaan"
+
+#: inc/class.admin.php:158 inc/class.admin.php:724
+msgid "Always show flip buttons"
+msgstr "Flip buttons weergeven toestaan"
+
+#: inc/class.admin.php:163 inc/class.admin.php:729
+msgid "Auto flip"
+msgstr "Auto flip"
+
+#: inc/class.admin.php:170 inc/class.admin.php:736
+msgid "Flip time laps"
+msgstr ""
+
+#: inc/class.admin.php:172 inc/class.admin.php:738
+msgid "(in miliseconds - default : 6000)"
+msgstr "(in milliseconden - standaard : 6000)"
+
+#: inc/class.admin.php:178
+msgid "Save Changes"
+msgstr "Wijzigingen opslaan"
+
+#: inc/class.admin.php:185
+msgid "How to insert a PDF Flipbook ?"
+msgstr ""
+
+#: inc/class.admin.php:190
+msgid ""
+"Make sure that the \"Automatically upload PDFs to Issuu\" box is checked or "
+"that you've manually send the PDF to the Issuu website."
+msgstr ""
+
+#: inc/class.admin.php:192
+msgid "Click to Issuu button on the TinyMCE main bar"
+msgstr ""
+
+#: inc/class.admin.php:196
+msgid ""
+"Select your PDF file in the dropdown list and add some specific params if "
+"you need. Note that you can change the default settings in the settings page"
+msgstr ""
+
+#: inc/class.admin.php:200
+msgid ""
+"Click to the insert button and then the shortcode will be generated. You can "
+"easily cut and past this shortcode everywhere in your content"
+msgstr ""
+
+#: inc/class.admin.php:207
+msgid "How to manually use the shortcode ? (advanced usage)"
+msgstr ""
+
+#: inc/class.admin.php:209
+msgid "[pdf issuu_pdf_id=\"id_of_your_PDF\" width=\"500\" height=\"300\"]"
+msgstr "[pdf issuu_pdf_id=\"id_van_uw_PDF\" width=\"500\" height=\"300\"]"
+
+#: inc/class.admin.php:210
+msgid ""
+"In this example, we want to specify a width and a height only for this PDF"
+msgstr ""
+
+#: inc/class.admin.php:212
+msgid ""
+"[pdf issuu_pdf_id=\"id_of_your_PDF\" layout=\"browsing\" autoFlip=\"true\" "
+"autoFlipTime=\"4000\"]"
+msgstr ""
+"[pdf issuu_pdf_id=\"id_van_uw_PDF\" layout=\"browsing\" autoFlip=\"true\" "
+"autoFlipTime=\"4000\"]"
+
+#: inc/class.admin.php:213
+msgid ""
+"In this other example, we want to specify the browsing layout (one page "
+"presentation) and we want the PDF pages to autoflip each 4 seconds"
+msgstr ""
+
+#: inc/class.admin.php:216
+msgid "Which params can be used with the shortcode ?"
+msgstr ""
+
+#: inc/class.admin.php:220
+msgid "The ISSUU PDF ID"
+msgstr "De Issuu PDF ID"
+
+#: inc/class.admin.php:225
+msgid "The width of the animation in pixels"
+msgstr "De breedte van de animatie in pixels"
+
+#: inc/class.admin.php:230
+msgid "The height of the animation in pixels"
+msgstr "De hoogte van de animatie in pixels"
+
+#: inc/class.admin.php:235
+msgid ""
+"The layout of the animation. Possible values : \"<strong>presentation</"
+"strong>\" (double page), \"<strong>browsing</strong>\" (single page)"
+msgstr ""
+
+#: inc/class.admin.php:240
+msgid "The background color - In hexadecimal format - without \"#\" "
+msgstr ""
+
+#: inc/class.admin.php:245
+msgid ""
+"Enable or disable the Auto Flip feature. Possible values : \"true\", \"false"
+"\""
+msgstr ""
+
+#: inc/class.admin.php:250
+msgid "The timelaps for the page flipe in milliseconds"
+msgstr ""
+
+#: inc/class.admin.php:255
+msgid ""
+"Allways show the right left flip buttons. Possible values : \"true\", \"false"
+"\""
+msgstr ""
+
+#: inc/class.admin.php:260
+msgid ""
+"Allow the full screen mode (if not, open in a new window). Possible values : "
+"\"true\", \"false\""
+msgstr ""
+
+#: inc/class.admin.php:456
+msgid "Issuu PDF"
+msgstr "Issuu PDF"
+
+#: inc/class.admin.php:460
+msgid "Issuu Document ID"
+msgstr "Issuu document ID"
+
+#: inc/class.admin.php:466
+msgid "Issuu Document Username"
+msgstr "Issuu document gebruikersnaam"
+
+#: inc/class.admin.php:472
+msgid "Issuu Document Name"
+msgstr "Issuu document naam"
+
+#: inc/class.admin.php:478
+msgid "Issuu Document URL"
+msgstr "Issuu document URL"
+
+#: inc/class.admin.php:484
+msgid "Issuu Auto Upload"
+msgstr "Issuu automatisch upload"
+
+#: inc/class.admin.php:590
+msgid "Issuu status"
+msgstr "Issuu status"
+
+#: inc/class.admin.php:592 inc/sync-input.php:4
+msgid "This PDF is already synchronised on Issuu"
+msgstr "Deze PDF is al gesynchroniseerd met Issuu"
+
+#: inc/class.admin.php:592 inc/sync-input.php:11
+msgid "Click here to delete this PDF from Issuu"
+msgstr "Klik hier om deze PDF te verwijderen uit Issuu"
+
+#: inc/class.admin.php:594 inc/sync-input.php:21
+msgid "This PDF is not synchronised on Issuu"
+msgstr "Deze PDF is niet gesynchroniseerd met Issuu"
+
+#: inc/class.admin.php:594 inc/sync-input.php:27
+msgid "Click here to send this PDF to Issuu"
+msgstr "Klik hier om deze PDF naar Issuu te sturen"
+
+#: inc/class.admin.php:601 inc/sync-input.php:41
+msgid "Are you sure you want to send this PDF on Issuu ?"
+msgstr "Weet u zeker dat u deze PDF wilt opsturen naar Issuu?"
+
+#: inc/class.admin.php:604 inc/class.admin.php:624 inc/sync-input.php:44
+#: inc/sync-input.php:64
+msgid "Loading"
+msgstr "Bezig met laden"
+
+#: inc/class.admin.php:609 inc/sync-input.php:49
+msgid "An error occured during synchronisation with Issuu"
+msgstr "Er is een fout opgetreden tijdens de synchronisatie met Issuu"
+
+#: inc/class.admin.php:612 inc/sync-input.php:52
+msgid "Your PDF is now on Issuu !"
+msgstr "Uw PDF staat nu op Issuu!"
+
+#: inc/class.admin.php:621 inc/sync-input.php:61
+msgid "Are you sure you want to delete this PDF from Issuu ?"
+msgstr "Weet u zeker dat u deze PDF wilt verwijderen uit Issuu?"
+
+#: inc/class.admin.php:629 inc/sync-input.php:69
+msgid "Your PDF has been successfuly deleted"
+msgstr "Uw PDF is succesvol verwijderd"
+
+#: inc/class.admin.php:632 inc/sync-input.php:72
+msgid "An error occured during PDF deletion"
+msgstr "Er is een fout opgetreden tijdens PDF verwijderen"
+
+#: inc/class.admin.php:660
+msgid "Insert an Issuu PDF Flipbook"
+msgstr "Een Issuu PDF Flipbook invoegen"
+
+#: inc/class.admin.php:669
+msgid "Select a PDF file"
+msgstr "Selecteer een PDF-bestand"
+
+#: inc/class.admin.php:744
+msgid "Insert the PDF"
+msgstr "De PDF invoegen"
+
+#: inc/shortcodes.php:43
+msgid "Loading..."
+msgstr "Bezig met laden..."
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://beapi.fr"
+msgstr "http://beapi.fr"
+
+#. Description of the plugin/theme
+msgid "Allow to create PDF Flipbooks with the http://issuu.com service."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Benjamin Niess"
+msgstr "Benjamin Niess"
+
+#~ msgid ""
+#~ "Click to the media button, choose a PDF document and click on the Issuu "
+#~ "PDF button to insert the basic shortcode"
+#~ msgstr ""
+#~ "Cliquez sur le bontou \"ajouter un media\", sÃ©lectionnez votre fichier "
+#~ "PDF et cliquez sur le bouton \"PDF Issuu\" pour insÃ©rer le shortcode de "
+#~ "base"
+
+#~ msgid ""
+#~ "If you want to add params for a specific PDF, you can follow these "
+#~ "examples:"
+#~ msgstr ""
+#~ "Si vous souhaitez ajouter des paramÃ¨tres pour un PDF spÃ©cifique, vous "
+#~ "pouvez suivre les exemples suivants :"
+
+#~ msgid "Auto flip (every 6 seconds)"
+#~ msgstr "DÃ©filement automatique (toutes les 6 secondes)"
