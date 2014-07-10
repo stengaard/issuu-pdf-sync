@@ -17,7 +17,7 @@ Then you'll be abble to insert flipbooks inside your post without having to quit
 == Installation ==
 
 1.	Upload and activate the plugin
-2.	Go to Issuu.com and get an API Key http://issuu.com/user/settings?services=true#services
+2.	Go to Issuu.com and get an API Key https://issuu.com/home/settings/apikey
 3.	Go back to your WordPress admin and go to 'Settings > Issuu PDF Sync'
 4.	Enter your Issuu API Key and Secret Key
 5.	Now, when you will upload a PDF in your library (or directly in your post), it will be sent to Issuu
@@ -30,7 +30,7 @@ Then you'll be abble to insert flipbooks inside your post without having to quit
 
 = How to get an Issuu API Key ? =
 
-You need to go to http://issuu.com and to create an account. Then go to the http://issuu.com/user/settings?services=true#services page and create a new application
+You need to go to http://issuu.com and to create an account. Then go to the https://issuu.com/home/settings/apikey page and create a new application
 
 = How to use the shortocde ? =
 
